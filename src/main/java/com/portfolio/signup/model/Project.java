@@ -1,5 +1,7 @@
 package com.portfolio.signup.model;
 
+import jakarta.persistence.Column;
+
 // package com.portfolio.projecthandle.model;
 
 import jakarta.persistence.Entity;
@@ -23,6 +25,7 @@ public class Project {
     private int id;
     private String title;
     private String image;
+    @Column(length = 10000)
     private String description;
     private String link;
 }

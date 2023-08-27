@@ -30,7 +30,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void createUser(User user) {
-        this.userRepository.save(user);
+        if(this.userRepository.findByUserName(user.getUserName())!=null){
+            log.info("User Already Exist");
+        }else{
+            this.userRepository.save(user);
+        }
     }
 
     @Override
